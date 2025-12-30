@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X, Globe } from 'lucide-react';
+import { X, Globe } from 'lucide-react';
 import { Link as ScrollLink } from 'react-scroll';
 import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom';
@@ -12,7 +12,7 @@ export default function Navbar() {
   const { t, i18n } = useTranslation();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [language, setLanguage] = useState<string>(i18n.language || "en");
-  const [open, setOpen] = useState(false);
+  const [, setOpen] = useState(false);
 
   // Stable IDs (used for scroll)
   const sections = [

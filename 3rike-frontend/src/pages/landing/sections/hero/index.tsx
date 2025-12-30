@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export default function HeroSection() {
   const { t } = useTranslation();
-  const [open, setOpen] = useState(false);
+  const [, setOpen] = useState(false);
 
   return (
     <div className="bg-black relative min-h-screen w-full overflow-x-hidden text-white">
