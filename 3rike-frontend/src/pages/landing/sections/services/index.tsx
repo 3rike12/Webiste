@@ -58,7 +58,7 @@ export default function Services() {
         <img 
           src="/services.png" 
           alt="" 
-          className="w-[200px] md:w-[300px] lg:w-[500px] object-contain opacity-90"
+          className="w-50 md:w-75 lg:w-125 object-contain opacity-90"
         />
       </div>
 
@@ -81,7 +81,7 @@ export default function Services() {
             <div
               key={index}
               className={`
-                relative overflow-hidden rounded-2xl bg-[#1A1A1A] p-8 h-[320px] 
+                relative overflow-hidden rounded-2xl bg-[#1A1A1A] p-8 h-80 
                 flex flex-col justify-start items-start text-left
                 transition-transform hover:scale-[1.01] duration-300
                 ${item.className}

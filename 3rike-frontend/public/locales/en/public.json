@@ -15,32 +15,32 @@
     }
   },
   "services": {
-  "title": "Our Services",
-  "subtitle": "Here are the services we offer to both Riders and Investors to earn from 3rike",
-  "items": {
-    "financing": {
-      "title": "Shared Fleet financing",
-      "description": "Invest in 3rikes with little as $56 and earn up to 60% ROI."
-    },
-    "credit": {
-      "title": "Riders Credit Circle",
-      "description": "Riders pays weekly dues, Weekly returns and build credit score."
-    },
-    "management": {
-      "title": "Fleet & Riders Management",
-      "description": "Full registration, Verification, and assignment of riders handled by us."
-    },
-    "savings": {
-      "title": "Savings",
-      "description": "The savings features for investors and riders to save and earn returns."
-    },
-    "loans": {
-      "title": "Loans",
-      "description": "We give out loans to both Riders with good credit score and verified investors."
+    "title": "Our Services",
+    "subtitle": "Here are the services we offer to both Riders and Investors to earn from 3rike",
+    "items": {
+      "financing": {
+        "title": "Shared Fleet financing",
+        "description": "Invest in 3rikes with little as $56 and earn up to 60% ROI."
+      },
+      "credit": {
+        "title": "Riders Credit Circle",
+        "description": "Riders pays weekly dues, Weekly returns and build credit score."
+      },
+      "management": {
+        "title": "Fleet & Riders Management",
+        "description": "Full registration, Verification, and assignment of riders handled by us."
+      },
+      "savings": {
+        "title": "Savings",
+        "description": "The savings features for investors and riders to save and earn returns."
+      },
+      "loans": {
+        "title": "Loans",
+        "description": "We give out loans to both Riders with good credit score and verified investors."
+      }
     }
-  }
-}, 
-"about": {
+  },
+  "about": {
     "title": "About Us",
     "paragraph1": "3rike is is a rider-first platform built to help 3rike riders own their bikes, save money, and access flexible loans.",
     "paragraph2": "It also opens opportunities for investors to fund riders, earn attractive returns, and grow their savings through a secure, transparent financing system. Empowering riders. Rewarding investors. Driving shared growth."

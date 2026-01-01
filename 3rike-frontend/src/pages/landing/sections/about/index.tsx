@@ -6,7 +6,7 @@ export default function AboutUs() {
   return (
     <section
       id="about"
-      className="bg-black -py-2 px-6 md:px-12 text-white relative overflow-hidden min-h-[600px] flex items-center"
+      className="bg-black -py-2 px-6 md:px-12 text-white relative overflow-hidden min-h-150 flex items-center"
     >
       <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16">
         
@@ -30,7 +30,7 @@ export default function AboutUs() {
         <div 
           className="
             /* Mobile: Absolute, centered vertically, Fixed Width (500px) to maintain scale */
-            absolute z-0 -right-10 top-3/4 -translate-y-1/2  w-[500px] pointer-events-none
+            absolute z-0 -right-10 top-3/4 -translate-y-1/2  w-125 pointer-events-none
 
             /* Desktop: Relative, Side-by-side, Normal Opacity */
             md:relative md:inset-auto md:w-1/2 md:flex md:justify-end md:opacity-100 

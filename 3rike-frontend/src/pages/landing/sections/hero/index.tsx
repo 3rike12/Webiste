@@ -1,17 +1,20 @@
 import { useTranslation } from "react-i18next";
-import Navbar from "@/components/ui/navbar";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 // import ComingSoonModal from "@/components/modal/coming-soon";
 
 export default function HeroSection() {
+  const navigate = useNavigate();
   const { t } = useTranslation();
   const [, setOpen] = useState(false);
 
+  const handleLoginNavigate = () => {
+    navigate('/create-account-rider')
+  };
+
   return (
     <div className="bg-black relative min-h-screen w-full overflow-x-hidden text-white">
-      <Navbar />
-
       <section
         id="home"
         // Changed to flex-col to stack the "Top Row" and "Bottom Features" vertically
@@ -41,7 +44,7 @@ export default function HeroSection() {
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4">
-              <Button onClick={() => setOpen(true)} className="px-4 sm:px-6 md:px-5 py-6 bg-white text-black hover:bg-[#b5b5b5] rounded-full cursor-pointer hover:scale-105 transition-transform duration-300">
+              <Button onClick={handleLoginNavigate} className="px-4 sm:px-6 md:px-5 py-6 bg-white text-black hover:bg-[#b5b5b5] rounded-full cursor-pointer hover:scale-105 transition-transform duration-300">
                 {t("hero.cta.primary")} <img src="ebike.svg" alt="" className="w-5 h-5" />
               </Button>
               <Button onClick={() => setOpen(true)} className="px-4 sm:px-6 md:px-5 py-6 bg-black hover:bg-[#b5b5b5] hover:text-white text-white border-white border rounded-full cursor-pointer hover:scale-105 transition-transform duration-300">
@@ -80,7 +83,7 @@ export default function HeroSection() {
             <div className="flex flex-col items-start gap-1 text-left">
               <img src="/affordable.svg" alt="Affordable Fare" className="w-8 h-8 lg:w-10 lg:h-10" />
               <h3 className="text-sm md:text-lg ">Affordable Fare</h3>
-              <p className="text-gray-400 text-xs md:text-sm md:leading-relaxed max-w-[250px]">
+              <p className="text-gray-400 text-xs md:text-sm md:leading-relaxed max-w-62.5">
                 Ensuring transport fares are affordable for the masses, allowing easy movement.
               </p>
             </div>
@@ -89,7 +92,7 @@ export default function HeroSection() {
             <div className="flex flex-col items-start gap-1 text-left">
               <img src="/safety.svg" alt="Ensured Safety" className="w-8 h-8 lg:w-10 lg:h-10" />
               <h3 className="text-sm md:text-lg ">Ensured Safety</h3>
-              <p className="text-gray-400 text-xs md:text-sm md:leading-relaxed max-w-[250px]">
+              <p className="text-gray-400 text-xs md:text-sm md:leading-relaxed max-w-62.5">
                 Advanced AI, real-time monitoring, and built-in redundancies ensure a safe journey.
               </p>
             </div>
@@ -98,7 +101,7 @@ export default function HeroSection() {
             <div className="flex flex-col items-start gap-1 text-left">
               <img src="employment.svg" alt="Employment Opportunities" className="w-8 h-8 lg:w-10 lg:h-10" />
               <h3 className="text-sm md:text-lg ">Employment Opportunities</h3>
-              <p className="text-gray-400 text-xs md:text-sm md:leading-relaxed max-w-[250px]">
+              <p className="text-gray-400 text-xs md:text-sm md:leading-relaxed max-w-62.5">
                 Creating job opportunities that allow people to earn a living and own 3-rikes.
               </p>
             </div>

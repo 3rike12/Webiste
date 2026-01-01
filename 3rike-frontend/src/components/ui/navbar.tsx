@@ -95,14 +95,14 @@ export default function Navbar() {
           <div className="relative">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="px-3 py-1.5 rounded-lg text-sm text-white font-medium hover:bg-gray-100 transition flex items-center gap-1.5 text-gray-700"
+              className="px-3 py-1.5 rounded-lg text-sm text-white font-medium hover:bg-[#b5b5b5] transition flex items-center gap-1.5"
             >
               <Globe className="w-4 h-4 text-white" />
               {language.toUpperCase()}
             </button>
 
             {isDropdownOpen && (
-              <div className="absolute right-0 mt-2 bg-white border  border-gray-200 rounded-lg shadow-lg z-50 w-32">
+              <div className="absolute right-0 mt-2 bg-white rounded-lg shadow-lg z-50 w-32">
                 {[
                   { code: "en", label: "English" },
                   { code: "fr", label: "Français" },
@@ -116,7 +116,7 @@ export default function Navbar() {
                   <button
                     key={lng.code}
                     onClick={() => changeLanguage(lng.code)}
-                    className={`block w-full text-left px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 ${language === lng.code ? "bg-gray-100 font-medium" : ""
+                    className={`block w-full text-left px-3 py-2 text-xs text-gray-700 hover:text-gray-400 ${language === lng.code ? "bg-gray-100 font-medium" : ""
                       }`}
                   >
                     {lng.label}

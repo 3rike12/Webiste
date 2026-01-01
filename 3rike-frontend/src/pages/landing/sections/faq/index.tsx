@@ -20,7 +20,7 @@ export default function Faq() {
         <img
           src="/faq.png"
           alt=""
-          className="w-[200px] md:w-[300px] lg:w-[500px] object-contain opacity-90"
+          className="w-50 md:w-75 lg:w-125 object-contain opacity-90"
         />
       </div>
 
