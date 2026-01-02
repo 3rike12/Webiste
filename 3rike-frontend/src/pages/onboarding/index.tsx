@@ -110,7 +110,7 @@ export default function Onboarding() {
             </div>
 
             {/* Footer */}
-            <div className="mt-auto flex flex-col items-center gap-4 pb-20">
+            <div className="mt-auto flex flex-col items-center gap-4">
                 <Button
                     onClick={() => navigate("/create-account-rider")}
                     className="w-full py-6 rounded-xl bg-[#01C259] hover:bg-[#019f4a] text-white font-bold text-lg shadow-none"
