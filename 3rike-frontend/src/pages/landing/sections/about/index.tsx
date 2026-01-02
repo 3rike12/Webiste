@@ -30,7 +30,7 @@ export default function AboutUs() {
         <div 
           className="
             /* Mobile: Absolute, centered vertically, Fixed Width (500px) to maintain scale */
-            absolute z-0 -right-10 top-3/4 -translate-y-1/2  w-125 pointer-events-none
+            absolute z-0 -right-60 top-3/4 -translate-y-1/2  w-125 pointer-events-none
 
             /* Desktop: Relative, Side-by-side, Normal Opacity */
             md:relative md:inset-auto md:w-1/2 md:flex md:justify-end md:opacity-100 

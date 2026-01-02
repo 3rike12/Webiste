@@ -5,7 +5,6 @@ import Footer from "@/components/ui/footer";
 export default function Layout() {
   return (
     <div
-      style={{ fontFamily: "Outfit" }}
       className="flex flex-col min-h-screen overflow-x-hidden bg-white"
     >
       <Navbar />

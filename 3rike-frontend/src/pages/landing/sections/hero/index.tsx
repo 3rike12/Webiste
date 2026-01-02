@@ -9,8 +9,8 @@ export default function HeroSection() {
   const { t } = useTranslation();
   const [, setOpen] = useState(false);
 
-  const handleLoginNavigate = () => {
-    navigate('/create-account-rider')
+  const handleOnboardingNavigate = () => {
+    navigate('/onboarding')
   };
 
   return (
@@ -44,10 +44,10 @@ export default function HeroSection() {
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4">
-              <Button onClick={handleLoginNavigate} className="px-4 sm:px-6 md:px-5 py-6 bg-white text-black hover:bg-[#b5b5b5] rounded-full cursor-pointer hover:scale-105 transition-transform duration-300">
+              <Button onClick={handleOnboardingNavigate} className="px-3 sm:px-3 md:px-3 py-6 bg-white text-black hover:bg-[#b5b5b5] rounded-full cursor-pointer hover:scale-105 transition-transform duration-300">
                 {t("hero.cta.primary")} <img src="ebike.svg" alt="" className="w-5 h-5" />
               </Button>
-              <Button onClick={() => setOpen(true)} className="px-4 sm:px-6 md:px-5 py-6 bg-black hover:bg-[#b5b5b5] hover:text-white text-white border-white border rounded-full cursor-pointer hover:scale-105 transition-transform duration-300">
+              <Button onClick={() => setOpen(true)} className="px-3 sm:px-3 md:px-3 py-6 bg-black hover:bg-[#b5b5b5] hover:text-white text-white border-white border rounded-full cursor-pointer hover:scale-105 transition-transform duration-300">
                 {t("hero.cta.secondary")} <img src="investment.svg" alt="" className="w-5 h-5" />
               </Button>
             </div>

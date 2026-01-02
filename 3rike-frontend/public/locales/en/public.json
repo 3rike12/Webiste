@@ -8,42 +8,42 @@
   },
   "hero": {
     "title": "Powering the Future of Smart - City Mobility",
-    "subtitle": "Empowering 3rike riders to own their tricycle while investors earns constant returns.",
+    "subtitle": "Empowering 3rike drivers to own their tricycle while investors earns constant returns.",
     "cta": {
-      "primary": "Join as a Rider",
+      "primary": "Join as a Driver",
       "secondary": "Start Investing"
     }
   },
   "services": {
     "title": "Our Services",
-    "subtitle": "Here are the services we offer to both Riders and Investors to earn from 3rike",
+    "subtitle": "Here are the services we offer to both Drivers and Investors to earn from 3rike",
     "items": {
       "financing": {
         "title": "Shared Fleet financing",
         "description": "Invest in 3rikes with little as $56 and earn up to 60% ROI."
       },
       "credit": {
-        "title": "Riders Credit Circle",
-        "description": "Riders pays weekly dues, Weekly returns and build credit score."
+        "title": "Drivers Credit Circle",
+        "description": "Drivers pays weekly dues, Weekly returns and build credit score."
       },
       "management": {
-        "title": "Fleet & Riders Management",
-        "description": "Full registration, Verification, and assignment of riders handled by us."
+        "title": "Fleet & Drivers Management",
+        "description": "Full registration, Verification, and assignment of drivers handled by us."
       },
       "savings": {
         "title": "Savings",
-        "description": "The savings features for investors and riders to save and earn returns."
+        "description": "The savings features for investors and drivers to save and earn returns."
       },
       "loans": {
         "title": "Loans",
-        "description": "We give out loans to both Riders with good credit score and verified investors."
+        "description": "We give out loans to both drivers with good credit score and verified investors."
       }
     }
   },
   "about": {
     "title": "About Us",
-    "paragraph1": "3rike is is a rider-first platform built to help 3rike riders own their bikes, save money, and access flexible loans.",
-    "paragraph2": "It also opens opportunities for investors to fund riders, earn attractive returns, and grow their savings through a secure, transparent financing system. Empowering riders. Rewarding investors. Driving shared growth."
+    "paragraph1": "3rike is is a driver-first platform built to help 3rike drivers own their bikes, save money, and access flexible loans.",
+    "paragraph2": "It also opens opportunities for investors to fund drivers, earn attractive returns, and grow their savings through a secure, transparent financing system. Empowering drivers. Rewarding investors. Driving shared growth."
   },
   "faq": {
     "header": {
@@ -53,28 +53,28 @@
     "faqs": [
       {
         "q": "How does the investment work?",
-        "a": "Jumpa supports a wide range of blockchains and networks, including Optimism, Ethereum, Solana, Binance Smart Chain, Tron, Polygon, Arbitrum, Base, Celo, and Lisk"
+        "a": "Retail investors can buy a full 3rike and earn weekly returns, or purchase shares in a 3rike and still earn weekly."
       },
       {
-        "q": "How do Riders earn?",
-        "a": "Yes. Jumpa is built with security at its core, using end-to-end encryption, secure authentication, and industry-standard protocols to protect your data and transactions. Everything you share on Jumpa remains private and securely handled."
+        "q": "How do drivers earn?",
+        "a": "Riders earn daily by putting their 3riKE on the road and transporting passengers"
       },
       {
         "q": "How does the savings work?",
-        "a": "First, you can export your contract address to any other mobile device, and you also have your recovery PIN, which you can change through your email to recover back your wallet."
+        "a": "Drivers, retail investors, and others can choose any of our savings plans and earn interest based on their selected plan."
       },
       {
         "q": "How do I get eligible for loan?",
-        "a": "Getting started is simple. Tap ‘Jump in’ to open a chat with Jumpa on Telegram. You’ll go through a quick setup to create your account, and once that’s complete, you’ll be ready to start trading on Jumpa."
+        "a": "Good credit and consistent savings improve your chances of getting a loan."
       },
       {
         "q": "Duration of time to own the 3rike?",
-        "a": "Jumpa currently supports Naira (NGN), Ghana Cedis (GHS),  We’re working on adding more local currencies soon"
+        "a": "Complete ownership in just 70 weeks."
       }
     ]
   },
   "footer": {
-    "company": "Jumpa",
+    "company": "3rike",
     "rights": "All Rights Reserved",
     "policy": "Privacy Policy",
     "terms": "Terms of Use"

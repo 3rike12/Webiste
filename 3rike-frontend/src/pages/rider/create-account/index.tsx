@@ -150,7 +150,7 @@ export default function CreateAccountForm() {
                                                 <Input
                                                     placeholder="First Name"
                                                     {...field}
-                                                    className="border border-gray-500 w-full h-12"
+                                                    className="border border-gray-300 w-full h-12"
                                                 />
                                             </FormControl>
                                             <FormMessage />
@@ -166,7 +166,7 @@ export default function CreateAccountForm() {
                                                 <Input
                                                     placeholder="Last Name"
                                                     {...field}
-                                                    className="border border-gray-500 w-full h-12"
+                                                    className="border border-gray-300 w-full h-12"
                                                 />
                                             </FormControl>
                                             <FormMessage />
@@ -184,7 +184,7 @@ export default function CreateAccountForm() {
                                                     <Input
                                                         placeholder="Email"
                                                         {...field}
-                                                        className="border border-gray-500 w-full h-12 pr-24"
+                                                        className="border border-gray-300 w-full h-12 pr-24"
                                                     />
 
                                                     <span className="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-gray-400 pointer-events-none">
@@ -206,7 +206,7 @@ export default function CreateAccountForm() {
                                                 <Input
                                                     placeholder="Phone Number"
                                                     {...field}
-                                                    className="border border-gray-500 w-full h-12"
+                                                    className="border border-gray-300 w-full h-12"
                                                 />
                                             </FormControl>
                                             <FormMessage />
@@ -221,7 +221,7 @@ export default function CreateAccountForm() {
                                         <FormItem>
                                             <FormControl>
                                                 <div className="relative w-full">
-                                                    <Input {...field} type={showPassword ? "text" : "password"} placeholder="Enter password" className="border border-gray-500 w-full pr-24 h-12" />
+                                                    <Input {...field} type={showPassword ? "text" : "password"} placeholder="Enter password" className="border border-gray-300 w-full pr-24 h-12" />
                                                     <Button
                                                         type="button"
                                                         variant="ghost"

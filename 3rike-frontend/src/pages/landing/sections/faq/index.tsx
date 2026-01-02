@@ -53,7 +53,7 @@ export default function Faq() {
               </button>
 
               {openIndex === index && (
-                <div className="px-6 pb-4 text-gray-200 text-sm">
+                <div className="px-6 pb-4 text-gray-200 text-md">
                   {faq.a}
                 </div>
               )}
