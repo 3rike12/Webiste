@@ -119,28 +119,69 @@ export default function VerifyAccountForm() {
         fieldName: "frontImage" | "backImage" | "selfieImage"
     }) => {
         const file = form.watch(fieldName) as File | undefined;
+        const inputRef = React.useRef<HTMLInputElement>(null);
+        const [preview, setPreview] = React.useState<string | null>(null);
+
+        const handleClick = () => {
+            inputRef.current?.click();
+        };
+
+        const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+            const selectedFile = e.target.files?.[0];
+
+            console.log('File selected:', selectedFile); // Debug log
+
+            if (selectedFile) {
+                // Set form value
+                form.setValue(fieldName, selectedFile, {
+                    shouldValidate: true,
+                    shouldDirty: true,
+                    shouldTouch: true
+                });
+
+                // Create preview
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    setPreview(reader.result as string);
+                };
+                reader.readAsDataURL(selectedFile);
+            }
+        };
+
+        // Get current file from form or use preview
+        const displayFile = file || (preview ? { name: 'Selected Image' } : null);
 
         return (
             <div className="space-y-2">
                 <span className="text-xs font-light text-gray-500">
                     {label} <span className="text-red-500">*Required</span>
                 </span>
-                <div className="border-2 border-dashed border-green-200 bg-green-50 rounded-xl p-6 flex flex-col items-center justify-center text-center gap-3 relative">
+                <div
+                    className="border-2 border-dashed border-green-200 bg-green-50 rounded-xl p-6 flex flex-col items-center justify-center text-center gap-3 cursor-pointer active:bg-green-100 transition-colors"
+                    onClick={handleClick}
+                >
                     <input
+                        ref={inputRef}
                         type="file"
                         accept="image/*"
-                        className="absolute inset-0 opacity-0 cursor-pointer"
-                        onChange={(e) => {
-                            if (e.target.files?.[0]) {
-                                form.setValue(fieldName, e.target.files[0], { shouldValidate: true });
-                            }
-                        }}
+                        capture="environment"
+                        className="hidden"
+                        onChange={handleFileChange}
                     />
-                    {file ? (
-                        <div className="flex flex-col items-center">
+                    {displayFile || preview ? (
+                        <div className="flex flex-col items-center w-full">
                             <CheckCircle2 className="w-10 h-10 text-green-600 mb-2" />
-                            <p className="text-sm font-semibold text-green-700">{file.name}</p>
-                            <p className="text-xs text-gray-400">Click to change</p>
+                            {preview && (
+                                <img
+                                    src={preview}
+                                    alt="Preview"
+                                    className="w-32 h-32 object-cover rounded-lg mb-2"
+                                />
+                            )}
+                            <p className="text-sm font-semibold text-green-700">
+                                {displayFile?.name || 'Image selected'}
+                            </p>
+                            <p className="text-xs text-gray-400">Tap to change</p>
                         </div>
                     ) : (
                         <>
@@ -152,16 +193,10 @@ export default function VerifyAccountForm() {
                                     <p className="text-sm font-bold text-gray-800">Take a photo or upload</p>
                                     <p className="text-xs text-gray-400">JPG, PNG, PDF</p>
                                 </div>
-                                <Button
-                                    type="button"
-                                    size="sm"
-                                    className="bg-[#01C259] font-light hover:bg-[#00a049] text-white px-6 rounded-lg pointer-events-none"
-                                >
+                                <div className="bg-[#01C259] font-light text-white px-6 py-2 rounded-lg">
                                     Upload file
-                                </Button>
+                                </div>
                             </div>
-
-
                         </>
                     )}
                 </div>
@@ -504,27 +539,35 @@ export default function VerifyAccountForm() {
                                 </div>
 
                                 <div className="space-y-6 mt-auto">
+                                    {/* Camera Button */}
                                     <label className="block w-full">
-
-                                        {/* TODO:CONFIRM THIS OPENS THE PHONE CAMERA */}
-                                        <div className="w-full bg-[#01C259] hover:bg-[#00a049] text-white py-4 rounded-xl font-light text-center cursor-pointer transition-colors">
+                                        <div className="w-full bg-[#01C259] hover:bg-[#00a049] active:bg-[#00a049] text-white py-4 rounded-xl font-light text-center cursor-pointer transition-colors">
                                             Take Live selfie
                                         </div>
                                         <input
                                             type="file"
                                             accept="image/*"
-                                            capture="user"
+                                            capture="user" // Front camera for selfies
                                             className="hidden"
                                             onChange={(e) => {
-                                                if (e.target.files?.[0]) {
-                                                    form.setValue("selfieImage", e.target.files[0], { shouldValidate: true });
+                                                const file = e.target.files?.[0];
+                                                console.log('Camera file selected:', file); // Debug log
+                                                if (file) {
+                                                    form.setValue("selfieImage", file, {
+                                                        shouldValidate: true,
+                                                        shouldDirty: true,
+                                                        shouldTouch: true
+                                                    });
+                                                    // Reset input so same file can be selected again
+                                                    e.target.value = '';
                                                 }
                                             }}
                                         />
                                     </label>
 
+                                    {/* Gallery Button */}
                                     <label className="block w-full">
-                                        <div className="w-full border border-[#01C259] text-[#01C259] bg-white hover:bg-green-50 py-4 rounded-xl font-light text-center cursor-pointer transition-colors">
+                                        <div className="w-full border border-[#01C259] text-[#01C259] bg-white hover:bg-green-50 active:bg-green-100 py-4 rounded-xl font-light text-center cursor-pointer transition-colors">
                                             Upload from existing Photo
                                         </div>
                                         <input
@@ -532,12 +575,22 @@ export default function VerifyAccountForm() {
                                             accept="image/*"
                                             className="hidden"
                                             onChange={(e) => {
-                                                if (e.target.files?.[0]) {
-                                                    form.setValue("selfieImage", e.target.files[0], { shouldValidate: true });
+                                                const file = e.target.files?.[0];
+                                                console.log('Gallery file selected:', file); // Debug log
+                                                if (file) {
+                                                    form.setValue("selfieImage", file, {
+                                                        shouldValidate: true,
+                                                        shouldDirty: true,
+                                                        shouldTouch: true
+                                                    });
+                                                    // Reset input so same file can be selected again
+                                                    e.target.value = '';
                                                 }
                                             }}
                                         />
                                     </label>
+
+
                                     <FormMessage className="text-center">
                                         {form.formState.errors.selfieImage?.message?.toString()}
                                     </FormMessage>
