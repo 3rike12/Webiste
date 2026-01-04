@@ -55,7 +55,21 @@ export default function VerifyAccountForm() {
     const cameraInputRef = useRef<HTMLInputElement>(null);
     const galleryInputRef = useRef<HTMLInputElement>(null);
 
-    const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const [selfieCard, setSelfieCard] = useState<{ preview: string; file: File } | null>(null);
+
+    const handleSelfieFileUpload = (
+        event: React.ChangeEvent<HTMLInputElement>,
+        setCard: React.Dispatch<React.SetStateAction<{ preview: string; file: File } | null>>
+    ) => {
+        const file = event.target.files?.[0];
+        if (file) {
+            const preview = URL.createObjectURL(file);
+            setCard({ preview, file });
+            form.setValue("selfieImage", file); // blob goes into form
+        }
+    };
+
+    const handleSelfieFileCamera = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (file) {
             console.log("File selected:", file.name);
@@ -539,13 +553,14 @@ export default function VerifyAccountForm() {
                                 {/* Selfie Frame Placeholder */}
                                 <div className="flex-1 flex flex-col items-center justify-center gap-6">
                                     <div className="w-64 h-80 border-3 border-dashed border-gray-200 rounded-[30px] relative overflow-hidden">
-                                        {selfiePreview && (
+                                        {(selfieCard?.preview || selfiePreview) && (
                                             <img
-                                                src={selfiePreview}
+                                                src={selfieCard?.preview ?? selfiePreview!}
                                                 className="w-full h-full object-cover"
                                                 alt="Selfie Preview"
                                             />
                                         )}
+
                                     </div>
 
                                     {/* Requirements Icons */}
@@ -582,7 +597,7 @@ export default function VerifyAccountForm() {
                                         accept="image/*"
                                         capture="user" // Forces front camera
                                         className="hidden"
-                                        onChange={handleFileSelect}
+                                        onChange={handleSelfieFileCamera}
                                     />
 
 
@@ -598,9 +613,10 @@ export default function VerifyAccountForm() {
                                     <input
                                         ref={galleryInputRef}
                                         type="file"
-                                        accept="image/*" // No capture attribute means Gallery/File Picker
+                                        accept="image/*"
+                                        onChange={(event) => handleSelfieFileUpload(event, setSelfieCard)}
                                         className="hidden"
-                                        onChange={handleFileSelect}
+                                        id="front-card-upload"
                                     />
 
                                     <FormMessage className="text-center">
