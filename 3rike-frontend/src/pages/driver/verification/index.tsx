@@ -51,21 +51,30 @@ export default function VerifyAccountForm() {
     const [open, setOpen] = React.useState(false);
 
     // for page 3 of the verificiation
+    const [selfiePreview, setSelfiePreview] = useState<string | null>(null);
     const cameraInputRef = useRef<HTMLInputElement>(null);
     const galleryInputRef = useRef<HTMLInputElement>(null);
 
     const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (file) {
-            console.log("File selected:", file.name); // Debugging
+            console.log("File selected:", file.name);
 
+            // A. Set Form Value
             form.setValue("selfieImage", file, {
                 shouldValidate: true,
                 shouldDirty: true,
                 shouldTouch: true,
             });
 
-            // Reset value so the same file can be selected again if needed
+            // B. Generate Preview immediately using FileReader (More reliable on mobile)
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setSelfiePreview(reader.result as string);
+            };
+            reader.readAsDataURL(file);
+
+            // C. Reset input value so the same file can be selected again if needed
             e.target.value = '';
         }
     };
@@ -530,11 +539,11 @@ export default function VerifyAccountForm() {
                                 {/* Selfie Frame Placeholder */}
                                 <div className="flex-1 flex flex-col items-center justify-center gap-6">
                                     <div className="w-64 h-80 border-3 border-dashed border-gray-200 rounded-[30px] relative overflow-hidden">
-                                        {form.watch("selfieImage") && (
+                                        {selfiePreview && (
                                             <img
-                                                src={URL.createObjectURL(form.watch("selfieImage") as File)}
+                                                src={selfiePreview}
                                                 className="w-full h-full object-cover"
-                                                alt="Selfie"
+                                                alt="Selfie Preview"
                                             />
                                         )}
                                     </div>
