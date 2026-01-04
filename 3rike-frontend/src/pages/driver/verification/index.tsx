@@ -55,24 +55,6 @@ export default function VerifyAccountForm() {
     const cameraInputRef = useRef<HTMLInputElement>(null);
     const galleryInputRef = useRef<HTMLInputElement>(null);
 
-    // const [selfieCard, setSelfieCard] = useState<{ preview: string; file: File } | null>(null);
-
-    // const handleSelfieFileUpload = (
-    //     event: React.ChangeEvent<HTMLInputElement>,
-    //     setCard: React.Dispatch<React.SetStateAction<{ preview: string; file: File } | null>>
-    // ) => {
-    //     const file = event.target.files?.[0];
-    //     if (file) {
-    //         const preview = URL.createObjectURL(file);
-    //         setCard({ preview, file });
-    //         form.setValue("selfieImage", file, {
-    //             shouldValidate: true,
-    //             shouldDirty: true,
-    //             shouldTouch: true,
-    //         }); // blob goes into form
-    //     }
-    // };
-
     const handleSelfieFileCamera = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (file) {
@@ -93,7 +75,7 @@ export default function VerifyAccountForm() {
             reader.readAsDataURL(file);
 
             // C. Reset input value so the same file can be selected again if needed
-            e.target.value = '';
+            // e.target.value = '';
         }
     };
     // Initialize form
@@ -598,7 +580,7 @@ export default function VerifyAccountForm() {
                                     <input
                                         ref={cameraInputRef}
                                         type="file"
-                                        accept="image/*"
+                                        accept="image/*,application/pdf"
                                         capture="user" // Forces front camera
                                         className="hidden"
                                         onChange={handleSelfieFileCamera}
@@ -617,7 +599,7 @@ export default function VerifyAccountForm() {
                                     <input
                                         ref={galleryInputRef}
                                         type="file"
-                                        accept="image/*"
+                                        accept="image/*,application/pdf"
                                         onChange={handleSelfieFileCamera}
                                         className="hidden"
                                     />
