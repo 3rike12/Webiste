@@ -129,7 +129,7 @@ export default function VerifyAccountForm() {
         setTimeout(() => {
             setLoading(false);
             // Navigate based on success/failure logic (simulated here)
-            const isSuccess = true;
+            const isSuccess = false;
             if (isSuccess) {
                 navigate("/driver/verification-success");
             } else {
@@ -569,12 +569,12 @@ export default function VerifyAccountForm() {
                                 <div className="space-y-3 mt-auto">
 
                                     {/* --- CAMERA BUTTON --- */}
-                                    <div
+                                    <Button
                                         onClick={() => cameraInputRef.current?.click()}
-                                        className="w-full bg-[#01C259] hover:bg-[#00a049] active:bg-[#00a049] text-white py-4 rounded-xl font-light text-center cursor-pointer transition-colors select-none"
+                                        className="w-full h-12 bg-[#01C259] hover:bg-[#00a049] active:bg-[#00a049] text-white py-4 rounded-xl font-light text-center cursor-pointer transition-colors select-none"
                                     >
                                         Take Live selfie
-                                    </div>
+                                    </Button>
 
                                     {/* Hidden Camera Input - Linked via Ref */}
                                     <input
@@ -588,12 +588,12 @@ export default function VerifyAccountForm() {
 
 
                                     {/* --- GALLERY BUTTON --- */}
-                                    <div
+                                    <Button
                                         onClick={() => galleryInputRef.current?.click()}
-                                        className="w-full border border-[#01C259] text-[#01C259] bg-white hover:bg-green-50 active:bg-green-100 py-4 rounded-xl font-light text-center cursor-pointer transition-colors select-none"
+                                        className="w-full h-12 border border-[#01C259] text-[#01C259] bg-white hover:bg-green-50 active:bg-green-100 py-4 rounded-xl font-light text-center cursor-pointer transition-colors select-none"
                                     >
                                         Upload from existing Photo
-                                    </div>
+                                    </Button>
 
                                     {/* Hidden Gallery Input - Linked via Ref */}
                                     <input

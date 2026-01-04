@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { useNavigate } from "react-router-dom";
@@ -9,12 +9,29 @@ import {
   Home,
   Bell,
 } from "lucide-react";
+import DepositModal from "../deposit";
 
 export default function DriverDashboard() {
   const navigate = useNavigate();
   const [changeCurrency, setChangeCurrency] = useState(true);
+  const [verificationStatus, setVerificationStatus] = useState<
+    "not_started" | "in_progress" | "approved"
+  >("not_started");
+  // State to control the modal visibility
+  const [isDepositOpen, setIsDepositOpen] = useState(false);
 
-  const handleVerfication = () => {
+  useEffect(() => {
+    const status = localStorage.getItem("verificationStatus") as
+      | "not_started"
+      | "in_progress"
+      | "approved";
+
+    if (status) {
+      setVerificationStatus(status);
+    }
+  }, []);
+
+  const handleVerification = () => {
     navigate('/driver/verification')
   };
   return (
@@ -70,12 +87,17 @@ export default function DriverDashboard() {
 
 
               <div className="flex gap-4">
-                <Button className="flex-1 bg-transparent hover:bg-white/30 text-white border border-white rounded-full h-12 gap-2 text-sm font-medium backdrop-blur-sm">
+
+                <Button
+                  onClick={() => setIsDepositOpen(true)} // <--- Add this trigger
+                  className="flex-1 bg-white/20 hover:bg-white/30 text-white border-none rounded-full h-12 gap-2 text-sm font-medium backdrop-blur-sm"
+                >
                   <div className="bg-white text-[#00C258] rounded-full p-0.5 w-5 h-5 flex items-center justify-center">
                     <Plus size={14} strokeWidth={4} />
                   </div>
                   Deposit
                 </Button>
+
                 <Button className="flex-1 bg-transparent hover:bg-white/30 text-white border border-white rounded-full h-12 gap-2 text-sm font-medium backdrop-blur-sm">
                   <div className="bg-white text-[#00C258] rounded-full p-0.5 w-5 h-5 flex items-center justify-center">
                     <ArrowUpRight size={14} strokeWidth={4} />
@@ -130,13 +152,21 @@ export default function DriverDashboard() {
                 />
               </div>
 
-              {/* TODO: After verification, this text would be updated */}
-              <h3 className="font-bold text-lg leading-tight">Start Verification</h3>
-              <p className="text-sm text-white mt-0.5">Complete Kyc and be eligible.</p>
+              <h3 className="font-bold text-lg leading-tight">
+                {verificationStatus === "not_started" && "Start Verification"}
+                {verificationStatus === "in_progress" && "Verification in Progress"}
+                {verificationStatus === "approved" && "Own a 3rike"}
+              </h3>
+
+              <p className="text-sm text-white mt-0.5">
+                {verificationStatus === "not_started" && "Complete Kyc and be eligible."}
+                {verificationStatus === "in_progress" && "Complete Kyc and be eligible."}
+                {verificationStatus === "approved" && "Register and own a 3rike"}
+              </p>
             </div>
 
             <div className="absolute bottom-4 right-4 z-10 w-8 h-8 bg-[#00C258] rounded-full flex items-center justify-center shadow-lg">
-              <Button variant="link" onClick={handleVerfication}>
+              <Button variant="link" onClick={handleVerification}>
                 <img
                   src="/arrow-right.svg" // ⚠️ Export the green background from your design and put it here
                   alt="Card Background"
@@ -256,6 +286,12 @@ export default function DriverDashboard() {
 
 
       </div>
+
+      {/* deposit modal */}
+      <DepositModal 
+        isOpen={isDepositOpen} 
+        onClose={() => setIsDepositOpen(false)} 
+      />
     </div>
   );
 }

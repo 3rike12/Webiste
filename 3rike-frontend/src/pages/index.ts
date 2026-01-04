@@ -9,6 +9,7 @@ import DriverDashboard from "./driver/dashboard";
 import VerifyAccountForm from "./driver/verification";
 import VerificationSuccess from "./driver/verification/success";
 import VerificationFailed from "./driver/verification/fail";
+import VerificationFailedForm from "./driver/verification/verification-failed";
 export {
     Landing,
     NoMatch,
@@ -20,5 +21,6 @@ export {
     DriverDashboard,
     VerifyAccountForm,
     VerificationSuccess,
-    VerificationFailed
+    VerificationFailed,
+    VerificationFailedForm
 }

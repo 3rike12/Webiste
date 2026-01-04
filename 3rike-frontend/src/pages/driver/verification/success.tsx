@@ -1,8 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button"; // Optional, in case you want to add a button later
 
+// type VerificationStatus = "not_started" | "in_progress" | "approved";
+
 export default function VerificationSuccess() {
   const navigate = useNavigate();
+
+  const goToDashboard = () => {
+    localStorage.setItem("verificationStatus", "in_progress");
+    navigate("/driver");
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-6">
@@ -26,7 +33,7 @@ export default function VerificationSuccess() {
         {/* Optional: Navigation Button (Hidden in design but good for UX) */}
         <div className="mt-12 w-full">
             <Button 
-                onClick={() => navigate("/driver")} 
+                onClick={goToDashboard} 
                 className=" bg-[#01C259] hover:bg-[#00a049] h-14 rounded-xl text-lg font-light"
             >
                 Go to Dashboard
