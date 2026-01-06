@@ -5,8 +5,6 @@ import {
     ChevronDown,
     Check,
     Info,
-    Sparkles,
-    Smile
 } from "lucide-react";
 
 export default function LoanNotification() {
