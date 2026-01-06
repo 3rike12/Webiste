@@ -31,6 +31,10 @@ export default function DriverDashboard() {
     }
   }, []);
 
+  const handleLoan = () => {
+    navigate('/driver/loan')
+  };
+
   const handleVerification = () => {
     navigate('/driver/verification')
   };
@@ -90,7 +94,7 @@ export default function DriverDashboard() {
 
                 <Button
                   onClick={() => setIsDepositOpen(true)} // <--- Add this trigger
-                  className="flex-1 bg-white/20 hover:bg-white/30 text-white border-none rounded-full h-12 gap-2 text-sm font-medium backdrop-blur-sm"
+                  className="flex-1 bg-transparent hover:bg-white/30 text-white border border-white rounded-full h-12 gap-2 text-sm font-medium backdrop-blur-sm"
                 >
                   <div className="bg-white text-[#00C258] rounded-full p-0.5 w-5 h-5 flex items-center justify-center">
                     <Plus size={14} strokeWidth={4} />
@@ -218,7 +222,7 @@ export default function DriverDashboard() {
             </div>
 
             {/* Loan */}
-            <div className="bg-white border-3 border-dashed border-gray-100 rounded-2xl p-4 flex flex-col gap-2 ">
+            <div onClick={handleLoan} className="bg-white border-3 border-dashed border-gray-100 rounded-2xl p-4 flex flex-col gap-2 ">
               <div className="w-5 h-5 bg-white/20 rounded-lg flex items-center justify-center mb-2 backdrop-blur-md">
                 {/* Icon simulating the scooter/delivery icon */}
                 <img

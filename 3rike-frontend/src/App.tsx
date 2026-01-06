@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Layout from "@/components/ui/layout";
-import { CreateAccountForm, ForgotPasswordEmailForm, ForgotPasswordPhoneForm, Landing, LoginForm, NoMatch, Onboarding, DriverDashboard, VerifyAccountForm, VerificationSuccess, VerificationFailed, VerificationFailedForm, } from "./pages";
+import { CreateAccountForm, ForgotPasswordEmailForm, ForgotPasswordPhoneForm, Landing, LoginForm, NoMatch, Onboarding, DriverDashboard, VerifyAccountForm, VerificationSuccess, VerificationFailed, VerificationFailedForm, LoanDashboard, LoanRequestSuccess, LoanNotification, } from "./pages";
 
 function App() {
   return (
@@ -28,6 +28,9 @@ function App() {
             <Route path="verification-success" element={<VerificationSuccess />} />
             <Route path="verification-failed" element={<VerificationFailed/>} />
             <Route path="retry-verification" element={<VerificationFailedForm/>} />
+            <Route path="loan" element={<LoanDashboard/>} />
+            <Route path="loan-submitted" element={<LoanRequestSuccess/>}/>
+            <Route path="loan-notification" element={<LoanNotification/>}/>
             <Route path="*" element={<NoMatch />} />
           </Route>
 

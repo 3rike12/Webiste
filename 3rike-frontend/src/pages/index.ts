@@ -10,6 +10,9 @@ import VerifyAccountForm from "./driver/verification";
 import VerificationSuccess from "./driver/verification/success";
 import VerificationFailed from "./driver/verification/fail";
 import VerificationFailedForm from "./driver/verification/verification-failed";
+import LoanDashboard from "./driver/loan";
+import LoanRequestSuccess from "./driver/loan/success";
+import LoanNotification from "./driver/loan/notification";
 export {
     Landing,
     NoMatch,
@@ -22,5 +25,8 @@ export {
     VerifyAccountForm,
     VerificationSuccess,
     VerificationFailed,
-    VerificationFailedForm
+    VerificationFailedForm,
+    LoanDashboard,
+    LoanRequestSuccess,
+    LoanNotification
 }
