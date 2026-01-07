@@ -48,7 +48,7 @@ export default function Navbar() {
           }`}
       > */}
       <div
-        className={`mx-auto max-w-9xl flex h-12 sm:h-16 justify-between items-center px-3 sm:px-6 py-1 lg:rounded-3xl transition-all duration-300 ${scrolled
+        className={`mx-auto max-w-9xl flex h-16 sm:h-16 justify-between items-center px-3 sm:px-6 py-1 lg:rounded-3xl transition-all duration-300 ${scrolled
             ? "bg-yellow-400 lg:bg-[#8a8a8a] lg:backdrop-blur-lg lg:shadow-md"
             : "bg-yellow-400 lg:bg-transparent"
           }`}
@@ -56,13 +56,10 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2 sm:space-x-3 min-w-0 shrink cursor-pointer">
           <img
-            src="/logo.jpg"
+            src="/logo.svg"
             alt="Logo"
-            className="h-8 w-8 sm:h-10 sm:w-10 object-contain shrink-0 rounded-full"
+            className="h-35 w-35 object-contain shrink-0 rounded-full"
           />
-          <h1 className="text-sm sm:text-base lg:text-xl text-black sm:text-white tracking-wide font-semibold truncate">
-            3rike
-          </h1>
         </Link>
 
         {/* Desktop Nav */}

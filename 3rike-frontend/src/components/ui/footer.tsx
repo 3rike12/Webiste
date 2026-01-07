@@ -27,9 +27,8 @@ export default function Footer() {
                         <img
                             src="/logo.svg"
                             alt="3rike logo"
-                            className="w-10 h-10 object-contain"
+                            className="h-35 w-35 object-contain"
                         />
-                        <h2 className="text-xl font-semibold">3rike</h2>
                     </div>
 
                     <ul className="flex flex-row space-x-6 text-gray-600 text-sm">
