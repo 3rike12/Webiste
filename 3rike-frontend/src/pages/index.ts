@@ -20,6 +20,8 @@ import Savings from "./driver/savings";
 import Verification from "./driver/verification";
 import SavingsTargetDashboard from "./driver/savings/target-savings";
 import SavingsTargetForm from "./driver/savings/target-form";
+import SavingsSummary from "./driver/savings/target-summary";
+import SavingsNotification from "./driver/savings/notification";
 export {
     Landing,
     NoMatch,
@@ -42,5 +44,7 @@ export {
     Savings,
     Verification,
     SavingsTargetDashboard,
-    SavingsTargetForm
+    SavingsTargetForm,
+    SavingsSummary,
+    SavingsNotification
 }
