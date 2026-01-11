@@ -45,7 +45,9 @@ export default function DriverDashboard() {
   const handleSavings = () => {
     navigate('/driver/savings')
   };
-
+  const handleInvestment = () => {
+    navigate('/driver/investment')
+  };
   const handleVerification = () => {
     navigate('/driver/verification')
   };
@@ -216,7 +218,7 @@ export default function DriverDashboard() {
             </div>
 
             {/* Investment */}
-            <div className="bg-white border-3 border-dashed border-gray-100 rounded-2xl p-4 flex flex-col gap-2 ">
+            <div onClick={handleInvestment} className="bg-white border-3 border-dashed border-gray-100 rounded-2xl p-4 flex flex-col gap-2 ">
               <div className="w-5 h-5 bg-white/20 rounded-lg flex items-center justify-center mb-2 backdrop-blur-md">
                 <img
                   src="/invest.svg"

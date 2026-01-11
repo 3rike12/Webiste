@@ -37,6 +37,8 @@ import PaymentSettings from "./driver/settings/payment-settings";
 import ChangePaymentPin from "./driver/settings/payment-pin/change-pin";
 import SelectCryptoAsset from "./driver/withdraw/crypto/select-crypto";
 import WithdrawCryptoAsset from "./driver/withdraw/crypto/withdraw-crypto";
+import Investment from "./driver/investment";
+import InvestmentHome from "./driver/investment/home";
 export {
     Landing,
     NoMatch,
@@ -76,5 +78,7 @@ export {
     PaymentSettings,
     ChangePaymentPin,
     SelectCryptoAsset,
-    WithdrawCryptoAsset
+    WithdrawCryptoAsset,
+    Investment,
+    InvestmentHome
 }
