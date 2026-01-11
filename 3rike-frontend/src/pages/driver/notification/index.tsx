@@ -145,7 +145,7 @@ export default function DriverNotification() {
                     <img src="/rounded-back.svg" alt="Back" className="w-10 h-10" />
                 </Button>
 
-                <h1 className="text-lg font-semibold text-black">
+                <h1 className="font-semibold text-sm text-black">
                     Notification
                 </h1>
             </div>

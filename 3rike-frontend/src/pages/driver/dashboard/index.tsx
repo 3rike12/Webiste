@@ -52,8 +52,11 @@ export default function DriverDashboard() {
   const handle3rikeAi = () => {
     navigate('/driver/3rikeAi')
   };
-   const handleNotification = () => {
+  const handleNotification = () => {
     navigate('/driver/notification')
+  };
+  const handleSettings = () => {
+    navigate('/driver/settings')
   };
 
   return (
@@ -66,7 +69,7 @@ export default function DriverDashboard() {
           <div className="flex items-center gap-3 bg-white rounded-full">
             {/* Replace with actual user image */}
             <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden border-2 border-white">
-              <img src="profile.png" alt="User" />
+              <img src="/profile.png" alt="User" />
             </div>
             <span className="font-light text-sm -mr-5">Welcome, Effiong Musa</span>
             <Button variant="link">
@@ -274,6 +277,7 @@ export default function DriverDashboard() {
 
             <Button
               variant="link"
+              onClick={handleSettings}
               size="icon"
               className="hover:bg-transparent text-gray-400"
             >
@@ -348,7 +352,7 @@ export default function DriverDashboard() {
         onClose={() => setIsDepositOpen(false)}
       />
 
-       {/* Withdraw modal */}
+      {/* Withdraw modal */}
       <WithdrawOptions
         isOpen={isWithdrawOpen}
         onClose={() => setIsWithdrawOpen(false)}

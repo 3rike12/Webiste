@@ -1,7 +1,8 @@
 import "./App.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Layout from "@/components/ui/layout";
-import { CreateAccountForm, ForgotPasswordEmailForm, ForgotPasswordPhoneForm, Landing, LoginForm, NoMatch, Onboarding, DriverDashboard, VerifyAccountForm, VerificationSuccess, VerificationFailed, VerificationFailedForm, LoanDashboard, LoanRequestSuccess, LoanNotification, SavingsOnboarding, SavingsDashboard, Loan, Savings, Verification, SavingsTargetDashboard, SavingsTargetForm, SavingsSummary, SavingsNotification, SavingsTargetSuccess, AiDashboard, DriverNotification, Withdraw, SetPinWithdraw, WithdrawBankDetails, WithdrawSendMoney } from "./pages";
+import { CreateAccountForm, ForgotPasswordEmailForm, ForgotPasswordPhoneForm, Landing, LoginForm, NoMatch, Onboarding, DriverDashboard, VerifyAccountForm, VerificationSuccess, VerificationFailed, VerificationFailedForm, LoanDashboard, LoanRequestSuccess, LoanNotification, SavingsOnboarding, SavingsDashboard, Loan, Savings, Verification, SavingsTargetDashboard, SavingsTargetForm, SavingsSummary, SavingsNotification, SavingsTargetSuccess, AiDashboard, DriverNotification, Withdraw, SetPinWithdraw, WithdrawBankDetails, WithdrawSendMoney, Settings, SettingsHome, SettingsProfile, PaymentSettings, ChangePaymentPin } from "./pages";
+
 
 function App() {
   return (
@@ -57,6 +58,14 @@ function App() {
               <Route path="summary" element={<SavingsSummary />} />
               <Route path="notification" element={<SavingsNotification />} />
               <Route path="success" element={<SavingsTargetSuccess />} />
+            </Route>
+
+            {/* Settings route */}
+            <Route path="settings" element={<Settings />}>
+              <Route index element={<SettingsHome />} />
+              <Route path="profile" element={<SettingsProfile />} />
+              <Route path="payment" element={<PaymentSettings />} />
+              <Route path="change-pin" element={<ChangePaymentPin />} />
             </Route>
 
             <Route path="*" element={<NoMatch />} />

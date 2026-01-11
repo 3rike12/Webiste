@@ -30,7 +30,11 @@ import SetPinWithdraw from "./driver/withdraw/set-pin";
 import WithdrawBankDetails from "./driver/withdraw/bank-details";
 import WithdrawSendMoney from "./driver/withdraw/send-money";
 import WithdrawOptions from "./driver/withdraw/options";
-
+import Settings from "./driver/settings";
+import SettingsHome from "./driver/settings/home";
+import SettingsProfile from "./driver/settings/profile";
+import PaymentSettings from "./driver/settings/payment-settings";
+import ChangePaymentPin from "./driver/settings/payment-pin/change-pin";
 export {
     Landing,
     NoMatch,
@@ -63,5 +67,10 @@ export {
     SetPinWithdraw,
     WithdrawBankDetails,
     WithdrawSendMoney,
-    WithdrawOptions
+    WithdrawOptions,
+    Settings,
+    SettingsHome,
+    SettingsProfile,
+    PaymentSettings,
+    ChangePaymentPin
 }
