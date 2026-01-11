@@ -26,15 +26,17 @@ import SavingsTargetSuccess from "./driver/savings/target-success";
 import AiDashboard from "./driver/3rikeAi";
 import DriverNotification from "./driver/notification";
 import Withdraw from "./driver/withdraw";
-import SetPinWithdraw from "./driver/withdraw/set-pin";
-import WithdrawBankDetails from "./driver/withdraw/bank-details";
-import WithdrawSendMoney from "./driver/withdraw/send-money";
+import SetPinWithdraw from "./driver/withdraw/bank/set-pin";
+import WithdrawBankDetails from "./driver/withdraw/bank/bank-details";
+import WithdrawSendMoney from "./driver/withdraw/bank/send-money";
 import WithdrawOptions from "./driver/withdraw/options";
 import Settings from "./driver/settings";
 import SettingsHome from "./driver/settings/home";
 import SettingsProfile from "./driver/settings/profile";
 import PaymentSettings from "./driver/settings/payment-settings";
 import ChangePaymentPin from "./driver/settings/payment-pin/change-pin";
+import SelectCryptoAsset from "./driver/withdraw/crypto/select-crypto";
+import WithdrawCryptoAsset from "./driver/withdraw/crypto/withdraw-crypto";
 export {
     Landing,
     NoMatch,
@@ -72,5 +74,7 @@ export {
     SettingsHome,
     SettingsProfile,
     PaymentSettings,
-    ChangePaymentPin
+    ChangePaymentPin,
+    SelectCryptoAsset,
+    WithdrawCryptoAsset
 }

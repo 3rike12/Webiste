@@ -13,6 +13,9 @@ export default function WithdrawOptions({ isOpen, onClose }: WithdrawOptionsProp
     const handleBankClick = () => {
         navigate('/driver/withdraw');
     };
+     const handleCryptoClick = () => {
+        navigate('/driver/withdraw/crypto');
+    };
 
     return (
         // FIXED: Added pointer-events logic here so it doesn't block the screen when closed
@@ -66,16 +69,16 @@ export default function WithdrawOptions({ isOpen, onClose }: WithdrawOptionsProp
                             onClick={handleBankClick}
                             className="w-full h-14 bg-[#F3F4F6] active:bg-gray-200 transition-colors py-4 px-5 flex items-center justify-between rounded-xl"
                         >
-                            <span className="text-base font-medium text-gray-900">To bank</span>
+                            <span className="text-base font-light text-gray-900">To bank</span>
                             <ChevronRight className="w-5 h-5 text-gray-400" />
                         </Button>
 
                         {/* Crypto Wallet */}
                         <Button
-                            onClick={() => console.log("Crypto clicked")}
+                            onClick={handleCryptoClick}
                             className="w-full h-14 bg-[#F3F4F6] active:bg-gray-200 transition-colors py-4 px-5 flex items-center justify-between rounded-xl"
                         >
-                            <span className="text-base font-medium text-gray-900">Crypto wallet</span>
+                            <span className="text-base font-light text-gray-900">Crypto wallet</span>
                             <ChevronRight className="w-5 h-5 text-gray-400" />
                         </Button>
 
