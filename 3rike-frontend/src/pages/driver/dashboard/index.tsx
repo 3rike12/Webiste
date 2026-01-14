@@ -160,8 +160,17 @@ export default function DriverDashboard() {
             </div>
           </div>
 
+          {/* to simulate approval */}
+          <button
+            type="button"
+            onClick={() => setVerificationStatus("approved")}
+            className="ml-2 text-xs text-[#1B8036] underline hover:[#1B8036] bg-transparent border-none cursor-pointer"
+          >
+            (Simulate Approval)
+          </button>
           {/* 3. VERIFICATION BANNER */}
           <div onClick={handleVerification} className="relative w-full bg-[#1B8036] rounded-2xl p-5 overflow-hidden text-white flex items-center justify-between">
+
             {/* Abstract Background Pattern (Simulated with SVG) */}
             <img
               src="/verification-banner.svg"

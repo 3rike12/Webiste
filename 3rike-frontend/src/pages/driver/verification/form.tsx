@@ -129,7 +129,7 @@ export default function VerifyAccountForm() {
         setTimeout(() => {
             setLoading(false);
             // Navigate based on success/failure logic (simulated here)
-            const isSuccess = false;
+            const isSuccess = true;
             if (isSuccess) {
                 navigate("/driver/verification/success");
             } else {
