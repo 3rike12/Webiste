@@ -5,24 +5,24 @@ import { Button } from "@/components/ui/button";
 const onboardingData = [
     {
         image: "/onboarding1.svg",
-        title: "Apply and own a 3rike",
-        description: "Apply to own a 3rike, get approved in under 48 hours, and start earning daily.",
-        color: "bg-[#BBE6C3]", // Light green placeholder color from your image
+        title: "Own a 3rike",
+        description: "Get approved under 24hrs and own a bike.",
+        color: "bg-[#BBE6C3]",
     },
     {
-        image: "#",
+        image: "/onboarding2.svg",
         title: "Savings",
         description: "Save smarter and reach your financial goals with Target Savings and 3rikky Lock Savings.",
         color: "bg-[#7BCD8A]",
     },
     {
-        image: "#",
+        image: "/onboarding3.svg",
         title: "Loans",
         description: "Grow your credit score and get loans up to GHS 16,000 with easy, flexible repayment.",
         color: "bg-[#BBE6C3]",
     },
     {
-        image: "#",
+        image: "/onboarding4.svg",
         title: "Retail Investment",
         description: "Become a 3rike owner with just GHS 600 and start earning weekly.",
         color: "bg-[#7BCD8A]",
@@ -40,8 +40,6 @@ export default function Onboarding() {
         }, 3000);
         return () => clearTimeout(timer);
     }, []);
-
-
 
     const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
         touchStartX.current = e.touches[0].clientX;
@@ -78,68 +76,55 @@ export default function Onboarding() {
 
     return (
         <div
-            className="fixed inset-0 bg-white flex flex-col p-3 overflow-y-auto"
+            className="fixed inset-0 bg-black flex flex-col overflow-hidden"
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
         >
+            {/* Full Screen Image Background */}
+            <div className="absolute inset-0 z-0 w-full h-full bg-black bg-[radial-gradient(circle_at_top_center,var(--tw-gradient-stops))] from-black via-black to-[#01C259]/40 flex items-center justify-center">
 
-            {/* Image Section */}
-            <div className={`relative w-full h-115.5 rounded-4xl ${screenData.color} mb-6`}>
+                {/* Centralized Image */}
                 <img
                     src={screenData.image}
-                    alt="image"
-                    className="absolute bottom-0 left-1/2 -translate-x-1/2"
+                    alt={screenData.title}
+                    className="w-full h-full object-contain -translate-y-12"
                 />
+
+                {/* Dark gradient overlay to make bottom text readable */}
+                <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-[#01C259]/40 pointer-events-none"></div>
             </div>
 
+            {/* Bottom Content Area */}
+            <div className="relative z-10 mt-auto px-6 pb-10 w-full flex flex-col justify-end h-full">
 
-            {/* Pagination */}
-            <div className="flex justify-center mb-3">
-                <div className="flex items-center justify-center w-24 h-4.5 space-x-2 bg-[#01C259] rounded-4xl">
-                    {onboardingData.map((_, index) => (
-                        <div
-                            key={index}
-                            className={`h-2 w-2 rounded-full transition-all duration-300 ${index === currentScreen
-                                ? "bg-gray-200"
-                                : "bg-gray-400"
-                                }`}
-                        />
-                    ))}
-                </div>
-            </div>
-
-            <div className="flex flex-col">
-                {/* Text */}
-                <div className="text-center space-y-3 mb-8 px-2">
-                    <h1 className="text-xl md:text-2xl font-extrabold text-black">
+                {/* Text Block */}
+                <div className="mb-8">
+                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-2 leading-tight tracking-tight">
                         {screenData.title}
                     </h1>
-                    <p className="text-gray-500 text-sm md:text-base leading-relaxed">
+                    <p className="text-gray-300 text-sm md:text-base pr-4">
                         {screenData.description}
                     </p>
                 </div>
 
-                {/* Footer */}
-                <div className="mt-auto flex flex-col items-center gap-4">
+                {/* Buttons Block */}
+                <div className="space-y-4">
                     <Button
                         onClick={() => navigate("/create-account-rider")}
-                        className="w-full py-6 rounded-xl bg-[#01C259] hover:bg-[#019f4a] text-white font-bold text-lg shadow-none"
+                        className="w-full h-14 rounded-xl bg-[#01C259] hover:bg-[#01a64c] text-white font-medium text-base shadow-none transition-colors"
                     >
                         Create account
                     </Button>
 
-                    <div className="text-sm text-gray-500 font-medium">
-                        Already have an account?{" "}
-                        <button
-                            onClick={() => navigate("/login")}
-                            className="text-[#01C259] font-bold hover:underline"
-                        >
-                            Log in
-                        </button>
-                    </div>
+                    <Button
+                        onClick={() => navigate("/login")}
+                        className="w-full h-14 rounded-xl bg-[#3F443F] hover:bg-[#323632] text-[#01C259] font-medium text-base shadow-none flex justify-center items-center gap-1 transition-colors"
+                    >
+                        <span className="text-[#01C259]/80 font-normal">Already have an account?</span>
+                        <span className="font-bold">Log in</span>
+                    </Button>
                 </div>
             </div>
-
         </div>
     );
 }
