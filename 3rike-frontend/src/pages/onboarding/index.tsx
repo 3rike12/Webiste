@@ -66,7 +66,7 @@ export default function Onboarding() {
     // --- SPLASH SCREEN ---
     if (currentScreen === -1) {
         return (
-            <div className="fixed inset-0 flex items-center justify-center bg-white">
+            <div className="fixed inset-0 w-full h-dvh flex items-center justify-center bg-white">
                 <img src="/logo.svg" alt="empty" className="w-60 h-60" />
             </div>
         );
@@ -76,18 +76,22 @@ export default function Onboarding() {
 
     return (
         <div
-            className="fixed inset-0 bg-black flex flex-col overflow-hidden"
+            className="fixed inset-0 w-full bg-black flex flex-col overflow-hidden"
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
         >
-            {/* Full Screen Image Background */}
-            <div className="absolute inset-0 z-0 w-full h-full bg-black bg-[radial-gradient(circle_at_top_center,var(--tw-gradient-stops))] from-black via-black to-[#01C259]/40 flex items-center justify-center">
+            {/* Full Screen Background Wrapper */}
+            <div className="absolute inset-0 z-0 w-full h-full bg-black bg-[radial-gradient(circle_at_top_center,var(--tw-gradient-stops))] from-[#01C259]/30 via-black to-black flex items-center justify-center">
 
-                {/* Centralized Image */}
+                {/* Background Image: Conditionally style based on the current index */}
                 <img
                     src={screenData.image}
                     alt={screenData.title}
-                    className="w-full h-full object-contain -translate-y-12"
+                    className={
+                        currentScreen === 0
+                            ? "w-full h-full object-cover" // Spans the entire screen for the first index
+                            : "w-60 md:w-full md:h-full object-contain -translate-y-20 md:-translate-y-18" // Constrained and translated for the rest
+                    }
                 />
 
                 {/* Dark gradient overlay to make bottom text readable */}
@@ -95,20 +99,21 @@ export default function Onboarding() {
             </div>
 
             {/* Bottom Content Area */}
-            <div className="relative z-10 mt-auto px-6 pb-10 w-full flex flex-col justify-end h-full">
+            {/* Added max-w-md and mx-auto so the content is responsive and centered beautifully on tablets/desktops */}
+            <div className="relative z-10 mt-auto px-6 pb-8 md:pb-12 w-full max-w-md mx-auto flex flex-col justify-end h-full">
 
                 {/* Text Block */}
-                <div className="mb-8">
-                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-2 leading-tight tracking-tight">
+                <div className="mb-8 text-center md:text-left">
+                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 leading-tight tracking-tight">
                         {screenData.title}
                     </h1>
-                    <p className="text-gray-300 text-sm md:text-base pr-4">
+                    <p className="text-gray-300 text-sm md:text-base pr-2 md:pr-4">
                         {screenData.description}
                     </p>
                 </div>
 
                 {/* Buttons Block */}
-                <div className="space-y-4">
+                <div className="space-y-4 w-full">
                     <Button
                         onClick={() => navigate("/create-account-rider")}
                         className="w-full h-14 rounded-xl bg-[#01C259] hover:bg-[#01a64c] text-white font-medium text-base shadow-none transition-colors"
