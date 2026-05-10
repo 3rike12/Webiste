@@ -1,16 +1,11 @@
+import Hero from "./sections/Hero";
+import Problems from "./sections/Problems";
 
-import Faq from "./sections/faq";
-import AboutUs from "./sections/about";
-import Hero from "./sections/hero";
-import Services from "./sections/services";
 export default function Landing() {
-
-    return (
-        <div className="bg-black">
-            <Hero />
-            <Services />
-            <AboutUs />
-            <Faq />
-        </div>
-    );
+  return (
+    <div className="bg-[#F5F5F0]">
+      <Hero />
+      <Problems />
+    </div>
+  );
 }
