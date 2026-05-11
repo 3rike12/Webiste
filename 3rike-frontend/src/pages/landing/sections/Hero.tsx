@@ -21,13 +21,13 @@ const Hero = () => {
           </div>
         </h1>
 
-        <p className="text-[#666666] text-base md:text-lg max-w-2xl mx-auto mt-6 md:mt-10 leading-relaxed px-2 animate-[fade-in_0.8s_ease-out_0.8s_both]">
+        <p className="text-[#666666] text-base md:text-lg max-w-2xl mx-auto mt-6 md:mt-10 leading-relaxed px-0 md:px-2 animate-[fade-in_0.8s_ease-out_0.8s_both]">
           3rike empowers electric tricycle and motorcycle drivers to achieve
           ownership while giving investors access to real-world income
           generating mobility assets driving a greener future.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mt-8 md:mt-10 justify-center px-4 animate-[fade-in_0.8s_ease-out_1s_both]">
+        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mt-8 md:mt-10 justify-center px-0 md:px-4 animate-[fade-in_0.8s_ease-out_1s_both]">
           <button
             type="button"
             onClick={() => navigate("/create-account-rider")}

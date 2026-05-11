@@ -5,7 +5,7 @@ const HowItWorks = () => {
 
   return (
     <div className="bg-[#829E04]">
-      <div className="border-b-[10px] border-[#F3FFBC] px-6 md:px-[78px] pt-16 md:pt-24 pb-12 md:pb-16">
+      <div className="border-b-[10px] border-[#F3FFBC] px-4 md:px-6 md:px-[78px] pt-16 md:pt-24 pb-12 md:pb-16">
         {/* Title */}
         <h2 className="text-white text-[36px] md:text-[65px] font-bold text-center mb-10 md:mb-16">
           How 3riKE Works
@@ -93,7 +93,7 @@ const HowItWorks = () => {
       </div>
 
       {/* INVESTORS Section */}
-      <div className="px-6 md:px-[78px] pb-16 md:pb-24">
+      <div className="px-4 md:px-6 md:px-[78px] pb-16 md:pb-24">
         <h2 className="text-white text-[36px] md:text-[65px] font-bold text-center mt-16 md:mt-24 mb-10 md:mb-16">
           How 3riKE Works
         </h2>

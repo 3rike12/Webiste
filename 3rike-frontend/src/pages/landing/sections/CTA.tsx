@@ -4,7 +4,7 @@ const CTA = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-[#829E04] px-6 md:px-[78px] py-12 md:py-20 border-t-[10px] border-[#F3FFBC]">
+    <div className="bg-[#829E04] px-4 md:px-6 md:px-[78px] py-12 md:py-20 border-t-[10px] border-[#F3FFBC]">
       <div className="bg-[#F5F5F0] rounded-3xl md:rounded-[40px] py-16 md:py-32 px-4 md:px-16 text-center mx-auto">
         <h2 className="text-[#829E04] text-[20px] sm:text-[36px] md:text-[55px] font-extrabold leading-tight mb-4 md:mb-6">
           Powering the Future of Greener

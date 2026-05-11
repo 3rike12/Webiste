@@ -32,7 +32,7 @@ const Mission = () => {
   }, []);
 
   return (
-    <div className="bg-white py-12 md:py-24 px-6">
+    <div className="bg-white py-12 md:py-24 px-4 md:px-6">
       <div className="max-w-[1106px] mx-auto text-center">
         <p className="text-[#829E04] text-[14px] md:text-[20px] font-semibold tracking-[0.2em] uppercase mb-6 md:mb-8">
           OUR MISSION

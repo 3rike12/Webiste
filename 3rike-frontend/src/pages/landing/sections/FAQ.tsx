@@ -31,7 +31,7 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <div className="bg-[#F5F5F0] px-6 md:px-[78px] py-16 md:py-24">
+    <div className="bg-[#F5F5F0] px-4 md:px-6 md:px-[78px] py-16 md:py-24">
       {/* Desktop: side-by-side layout */}
       <div className="hidden lg:flex gap-16 items-start">
         {/* Left — Questions */}
