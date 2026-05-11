@@ -39,6 +39,7 @@ import SelectCryptoAsset from "./driver/withdraw/crypto/select-crypto";
 import WithdrawCryptoAsset from "./driver/withdraw/crypto/withdraw-crypto";
 import Investment from "./driver/investment";
 import InvestmentHome from "./driver/investment/home";
+import InvestorWaitlist from "./investor-waitlist";
 export {
     Landing,
     NoMatch,
@@ -80,5 +81,6 @@ export {
     SelectCryptoAsset,
     WithdrawCryptoAsset,
     Investment,
-    InvestmentHome
+    InvestmentHome,
+    InvestorWaitlist
 }

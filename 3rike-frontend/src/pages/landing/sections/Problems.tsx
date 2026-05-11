@@ -1,30 +1,28 @@
-import React from "react";
-
 const Problems = () => {
   return (
-    <div className="">
+    <div>
       <div>
         <img className="w-full" src="/the_problem1.svg" alt="problems 1 img" />
       </div>
 
-      <div className="flex items- justify-between bg-[#829E04] px-[78px] py-[100px]">
+      <div className="flex flex-col md:flex-row md:items-end justify-between bg-[#829E04] px-6 md:px-[78px] py-12 md:py-[100px] gap-8">
         <div>
-          <h1 className="text-[#F3FFBC] text-[26px] font-semibold tracking-wider">
+          <h1 className="text-[#F3FFBC] text-lg md:text-[26px] font-semibold tracking-wider">
             WHY NOW
           </h1>
 
           <h1 className="mt-4">
-            <div className="text-[65px] font-semibold tracking-tighter text-white">
+            <div className="text-[36px] md:text-[65px] font-semibold tracking-tighter text-white">
               The Problem
             </div>
-            <div className="text-[65px] font-semibold tracking-tighter text-white -mt-8 -mb-2">
+            <div className="text-[36px] md:text-[65px] font-semibold tracking-tighter text-white md:-mt-8 md:-mb-2">
               Why we <span className="text-[#E2F490]">Exist</span>
             </div>
           </h1>
         </div>
 
-        <div className="w-[650px] text-[23px] text-[#FEFFF8] flex items-end justify-end">
-          Africa’s 3rike / Motorcycle drivers power daily life, yet most drivers
+        <div className="md:w-[650px] text-base md:text-[23px] text-[#FEFFF8]">
+          Africa's 3rike / Motorcycle drivers power daily life, yet most drivers
           remain trapped in expensive rentals with no path to ownership.
           Investors lack access to stable, real-economy opportunities in
           emerging markets.3riKE changes that.
@@ -32,7 +30,7 @@ const Problems = () => {
       </div>
 
       <div>
-        <img className="w-full" src="/the_problem2.svg" alt="problems 1 img" />
+        <img className="w-full" src="/the_problem2.svg" alt="problems 2 img" />
       </div>
     </div>
   );
