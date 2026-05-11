@@ -83,7 +83,7 @@ const Features = () => {
   return (
     <div className="bg-[#829E04] pt-12 md:pt-20 pb-16 md:pb-24 overflow-hidden">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:justify-between md:items-center px-6 md:px-[75px] pt-12 md:pt-[130px] mb-10 md:mb-20 gap-6">
+      <div className="flex flex-col lg:flex-row md:justify-between lg:items-center px-6 md:px-[75px] pt-6 lg:pt-[130px] mb-10 md:mb-20 gap-6">
         <div>
           <p className="text-[#F3FFBC] text-lg md:text-[26px] font-semibold tracking-[0.2em] uppercase mb-2">
             WHAT WE DO

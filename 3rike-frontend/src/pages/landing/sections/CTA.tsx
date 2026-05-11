@@ -5,14 +5,14 @@ const CTA = () => {
 
   return (
     <div className="bg-[#829E04] px-6 md:px-[78px] py-12 md:py-20 border-t-[10px] border-[#F3FFBC]">
-      <div className="bg-[#F5F5F0] rounded-3xl md:rounded-[40px] py-16 md:py-32 px-6 md:px-16 text-center mx-auto">
-        <h2 className="text-[#829E04] text-[28px] sm:text-[36px] md:text-[55px] font-extrabold leading-tight mb-4 md:mb-6">
+      <div className="bg-[#F5F5F0] rounded-3xl md:rounded-[40px] py-16 md:py-32 px-4 md:px-16 text-center mx-auto">
+        <h2 className="text-[#829E04] text-[20px] sm:text-[36px] md:text-[55px] font-extrabold leading-tight mb-4 md:mb-6">
           Powering the Future of Greener
           <br />
           Smart - City Mobility
         </h2>
 
-        <p className="text-[#999999] text-base md:text-2xl italic mb-6 md:mb-10">
+        <p className="text-[#999999] text-sm md:text-2xl italic mb-6 md:mb-10">
           Empowering 3rike drivers to own their tricycle while
           <br className="hidden sm:block" />
           {" "}investors earns constant returns.

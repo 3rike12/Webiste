@@ -40,7 +40,7 @@ const FAQ = () => {
             <div className="h-3 bg-[#829E04]" />
             <div className="p-10">
               <h2 className="text-[#829E04] text-[32px] font-bold italic mb-8">
-                Frequently Asked Questions
+                How 3rike works
               </h2>
 
               <div>
@@ -98,7 +98,7 @@ const FAQ = () => {
           <div className="h-3 bg-[#829E04]" />
           <div className="p-6">
             <h2 className="text-[#829E04] text-2xl font-bold italic mb-6">
-              Frequently Asked Questions
+              How 3rike Works
             </h2>
 
             <div>
