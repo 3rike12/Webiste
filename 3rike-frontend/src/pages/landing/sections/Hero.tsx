@@ -4,7 +4,7 @@ const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col text-center justify-center items-center pt-28 md:pt-36 pb-12 md:pb-20 px-4">
+    <div className="flex flex-col text-center justify-center items-center pt-28 md:pt-48 pb-12 md:pb-20 px-4">
       <span
         className="border border-[#E2F490] bg-white rounded-full px-4 md:px-6 py-2 text-[#666666] text-sm md:text-md mb-6 md:mb-10 animate-[fade-in_0.6s_ease-out_0.2s_both]"
       >
