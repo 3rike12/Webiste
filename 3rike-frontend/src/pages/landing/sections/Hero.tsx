@@ -22,9 +22,7 @@ const Hero = () => {
         </h1>
 
         <p className="text-[#666666] text-base md:text-lg max-w-2xl mx-auto mt-6 md:mt-10 leading-relaxed px-0 md:px-2 animate-[fade-in_0.8s_ease-out_0.8s_both]">
-          3rike empowers electric tricycle and motorcycle drivers to achieve
-          ownership while giving investors access to real-world income
-          generating mobility assets driving a greener future.
+          Helping Africa's mobility workers own electric vehicles and build financial identity, while offering investors predictable yields from real-world, green assets.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mt-8 md:mt-10 justify-center px-0 md:px-4 animate-[fade-in_0.8s_ease-out_1s_both]">
@@ -33,14 +31,14 @@ const Hero = () => {
             onClick={() => navigate("/create-account-rider")}
             className="bg-[#829E04] text-white rounded-xm py-3 md:py-4 px-8 md:px-10 text-base md:text-lg font-medium cursor-pointer hover:bg-[#6f8703] transition-colors"
           >
-            Join as a driver
+            Join as a 3riker
           </button>
           <button
             type="button"
             onClick={() => navigate("/waitlist")}
             className="border border-[#829E04] rounded-xm py-3 md:py-4 px-8 md:px-10 text-base md:text-lg font-medium text-[#829E04] cursor-pointer hover:bg-[#829E04]/10 transition-colors"
           >
-            Start investing
+            Earn yields
           </button>
         </div>
       </div>

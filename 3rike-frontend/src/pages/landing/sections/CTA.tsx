@@ -24,14 +24,14 @@ const CTA = () => {
             onClick={() => navigate("/create-account-rider")}
             className="bg-[#829E04] text-white py-4 md:py-5 px-8 md:px-10 text-base md:text-lg font-medium cursor-pointer"
           >
-            Join as a driver
+            Join as a 3riker
           </button>
           <button
             type="button"
             onClick={() => navigate("/waitlist")}
             className="border border-[#829E04] py-4 md:py-5 px-8 md:px-10 text-base md:text-lg font-medium text-[#829E04] cursor-pointer"
           >
-            Start investing
+            Earn yields
           </button>
         </div>
       </div>

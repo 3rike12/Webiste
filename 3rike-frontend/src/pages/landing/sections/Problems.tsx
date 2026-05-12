@@ -25,11 +25,15 @@ const Problems = () => {
           </h1>
         </div>
 
-        <div className="md:w-[650px] text-base md:text-[23px] text-[#FEFFF8]">
-          Africa's 3rike / Motorcycle drivers power daily life, yet most drivers
-          remain trapped in expensive rentals with no path to ownership.
-          Investors lack access to stable, real-economy opportunities in
-          emerging markets.3riKE changes that.
+        <div className="md:w-[650px] text-base md:text-[23px] text-[#FEFFF8] space-y-4">
+          <p>
+            Millions of African drivers generate daily income but lack
+            ownership, credit access, and transparent financial systems.
+          </p>
+          <p>
+            3riKE is building transparent financial infrastructure for the next
+            generation of electric mobility workers.
+          </p>
         </div>
       </div>
 

@@ -11,10 +11,10 @@ const Mission = () => {
     const handleScroll = () => {
       const rect = el.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      // Start revealing when the element enters the bottom of viewport
-      // Fully revealed when it reaches the middle
-      const start = windowHeight;
-      const end = windowHeight * 0.3;
+      // Start revealing when the element enters the bottom 80% of viewport
+      // Fully revealed when it reaches the middle 45%
+      const start = windowHeight * 0.85;
+      const end = windowHeight * 0.45;
       const current = rect.top;
 
       if (current >= start) {
@@ -39,16 +39,13 @@ const Mission = () => {
         </p>
 
         <p className="text-[#1A1A1A] text-xl sm:text-2xl md:text-[40px] font-bold leading-snug mb-6 md:mb-10">
-          At 3riKE, we are dedicated to creating shared prosperity through
-          sustainable mobility and transparent finance across Africa. We empower
-          young drivers with affordable electric three/two wheelers and a clear
-          path to ownership, while delivering predictable returns to everyday
-          investors through real asset-backed opportunities.
+          We are building the financial operating system for Africa's mobility
+          workers. 3riKE empowers drivers with affordable electric mobility,
+          transparent ownership, and access to financial tools that build
+          long-term prosperity.
         </p>
 
         <p className="text-[#1A1A1A] text-xl sm:text-2xl md:text-[40px] font-bold leading-snug">
-          Driven by innovation and transparency, our battery-swapping technology
-          eliminates downtime, enabling drivers to earn more consistently.{" "}
           <span
             ref={greenRef}
             style={{
@@ -59,9 +56,9 @@ const Mission = () => {
               transition: "background-image 0.1s ease-out",
             }}
           >
-            We combine clean electric mobility with secure, verifiable financial
-            systems that build trust, reduce disputes, and unlock credit and
-            savings for all participants.
+            By combining clean mobility with trusted financial infrastructure,
+            we help drivers earn more, own more, and build verifiable financial
+            identity.
           </span>
         </p>
       </div>

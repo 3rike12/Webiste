@@ -94,11 +94,8 @@ const Features = () => {
         </div>
 
         <p className="md:max-w-[650px] text-base md:text-[22px] text-[#FEFFF8] leading-relaxed">
-          Our electric bikes are building a greener Africa by cutting carbon
-          emissions and replacing fuel-powered vehicles with clean transport.
-          Our mission is to accelerate transparent and inclusive financial
-          services for young drivers, operators, and investors in Africa's
-          mobility sector.
+          We finance and power Africa's transition to electric mobility through
+          mobility financial infrastructure for drivers and fleet operators.
         </p>
       </div>
 
@@ -137,7 +134,9 @@ const Features = () => {
             <h3 className="text-white text-2xl md:text-[40px] font-bold mt-3 md:mt-5">
               {feature.title}
             </h3>
-            <p className="text-[#E2F490] font-medium text-sm md:text-base mt-1">{feature.description}</p>
+            <p className="text-[#E2F490] font-medium text-sm md:text-base mt-1">
+              {feature.description}
+            </p>
           </div>
         ))}
       </div>
