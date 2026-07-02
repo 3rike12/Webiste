@@ -10,6 +10,7 @@ export default function Navbar() {
     { label: "Features", href: "#features" },
     { label: "How it works", href: "#how-it-works" },
     { label: "FAQs", href: "#faqs" },
+    { label: "Learn more", to: "/investor-brief" },
   ];
 
   useEffect(() => {
@@ -54,19 +55,29 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-12">
-            {navLinks.map(({ label, href }) => (
-              <a
-                key={href}
-                href={href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollTo(href);
-                }}
-                className="text-[#1A1A1A] text-lg font-medium hover:text-[#829E04] transition-colors cursor-pointer"
-              >
-                {label}
-              </a>
-            ))}
+            {navLinks.map(({ label, href, to }) =>
+              to ? (
+                <Link
+                  key={to}
+                  to={to}
+                  className="text-[#1A1A1A] text-lg font-medium hover:text-[#829E04] transition-colors cursor-pointer"
+                >
+                  {label}
+                </Link>
+              ) : (
+                <a
+                  key={href}
+                  href={href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo(href!);
+                  }}
+                  className="text-[#1A1A1A] text-lg font-medium hover:text-[#829E04] transition-colors cursor-pointer"
+                >
+                  {label}
+                </a>
+              )
+            )}
           </nav>
 
           {/* Contact Button — Desktop */}
@@ -107,21 +118,24 @@ export default function Navbar() {
 
         {/* Nav Links */}
         <div className="flex-1 flex flex-col items-center justify-center gap-2 px-8">
-          {navLinks.map(({ label, href }, index) => (
-            <button
-              key={href}
-              type="button"
-              onClick={() => scrollTo(href)}
-              className="text-[#1A1A1A] text-4xl font-bold hover:text-[#829E04] transition-all duration-300 cursor-pointer py-4"
-              style={{
-                transitionDelay: isOpen ? `${index * 100 + 100}ms` : '0ms',
-                transform: isOpen ? 'translateY(0)' : 'translateY(30px)',
-                opacity: isOpen ? 1 : 0,
-              }}
-            >
-              {label}
-            </button>
-          ))}
+          {navLinks.map(({ label, href, to }, index) => {
+            const style = {
+              transitionDelay: isOpen ? `${index * 100 + 100}ms` : '0ms',
+              transform: isOpen ? 'translateY(0)' : 'translateY(30px)',
+              opacity: isOpen ? 1 : 0,
+            };
+            const className =
+              "text-[#1A1A1A] text-4xl font-bold hover:text-[#829E04] transition-all duration-300 cursor-pointer py-4";
+            return to ? (
+              <Link key={to} to={to} onClick={() => setIsOpen(false)} className={className} style={style}>
+                {label}
+              </Link>
+            ) : (
+              <button key={href} type="button" onClick={() => scrollTo(href!)} className={className} style={style}>
+                {label}
+              </button>
+            );
+          })}
         </div>
 
         {/* Bottom CTA */}
