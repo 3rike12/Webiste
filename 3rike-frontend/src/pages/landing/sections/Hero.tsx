@@ -38,7 +38,7 @@ const Hero = () => {
             onClick={() => navigate("/waitlist")}
             className="border border-[#829E04] rounded-xm py-3 md:py-4 px-8 md:px-10 text-base md:text-lg font-medium text-[#829E04] cursor-pointer hover:bg-[#829E04]/10 transition-colors"
           >
-            Earn yields
+            Join as a User
           </button>
         </div>
       </div>
